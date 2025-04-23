@@ -1,4 +1,4 @@
-# tbk-cache
+# cache-manager
 
 A flexible TypeScript caching library that supports multiple storage providers (Memory, Redis, MongoDB) with fallback capabilities.
 
