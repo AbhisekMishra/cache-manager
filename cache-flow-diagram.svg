@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+  <style>
+    .title { font: bold 14px sans-serif; }
+    .box { fill: #fff; stroke: #666; stroke-width: 2; }
+    .text { font: 12px sans-serif; }
+    .flow-line { stroke: #666; stroke-width: 2; marker-end: url(#arrowhead); fill: none; }
+    .highlight { fill: #e6f3ff; }
+    .error-path { stroke: #ff6b6b; }
+  </style>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title">Cache System Flow Diagram</text>
+
+  <!-- Initialization Flow -->
+  <g transform="translate(50,60)">
+    <rect x="0" y="0" width="120" height="40" rx="5" class="box highlight"/>
+    <text x="60" y="25" text-anchor="middle" class="text">Initialize Cache</text>
+    
+    <path d="M 60,40 L 60,80" class="flow-line"/>
+    
+    <rect x="0" y="80" width="120" height="40" rx="5" class="box"/>
+    <text x="60" y="105" text-anchor="middle" class="text">Read Config</text>
+    
+    <path d="M 60,120 L 60,160" class="flow-line"/>
+    
+    <rect x="0" y="160" width="120" height="40" rx="5" class="box"/>
+    <text x="60" y="185" text-anchor="middle" class="text">Create Provider</text>
+  </g>
+
+  <!-- Cache Operations -->
+  <g transform="translate(250,60)">
+    <rect x="0" y="0" width="400" height="200" rx="5" class="box"/>
+    <text x="200" y="30" text-anchor="middle" class="title">Cache Operations</text>
+    
+    <!-- Get Operation -->
+    <g transform="translate(20,50)">
+      <rect x="0" y="0" width="100" height="30" rx="5" class="box highlight"/>
+      <text x="50" y="20" text-anchor="middle" class="text">Get</text>
+      
+      <path d="M 100,15 L 140,15" class="flow-line"/>
+      
+      <rect x="140" y="0" width="100" height="30" rx="5" class="box"/>
+      <text x="190" y="20" text-anchor="middle" class="text">Primary Cache</text>
+      
+      <path d="M 240,15 L 280,15" class="flow-line"/>
+      
+      <rect x="280" y="0" width="100" height="30" rx="5" class="box"/>
+      <text x="330" y="20" text-anchor="middle" class="text">Fallback Cache</text>
+    </g>
+    
+    <!-- Set Operation -->
+    <g transform="translate(20,100)">
+      <rect x="0" y="0" width="100" height="30" rx="5" class="box highlight"/>
+      <text x="50" y="20" text-anchor="middle" class="text">Set</text>
+      
+      <path d="M 100,15 L 140,15" class="flow-line"/>
+      
+      <rect x="140" y="0" width="100" height="30" rx="5" class="box"/>
+      <text x="190" y="20" text-anchor="middle" class="text">Primary Cache</text>
+      
+      <path d="M 240,15 L 280,15" class="flow-line"/>
+      
+      <rect x="280" y="0" width="100" height="30" rx="5" class="box"/>
+      <text x="330" y="20" text-anchor="middle" class="text">Fallback Cache</text>
+    </g>
+    
+    <!-- Delete Operation -->
+    <g transform="translate(20,150)">
+      <rect x="0" y="0" width="100" height="30" rx="5" class="box highlight"/>
+      <text x="50" y="20" text-anchor="middle" class="text">Delete</text>
+      
+      <path d="M 100,15 L 140,15" class="flow-line"/>
+      
+      <rect x="140" y="0" width="100" height="30" rx="5" class="box"/>
+      <text x="190" y="20" text-anchor="middle" class="text">Primary Cache</text>
+      
+      <path d="M 240,15 L 280,15" class="flow-line"/>
+      
+      <rect x="280" y="0" width="100" height="30" rx="5" class="box"/>
+      <text x="330" y="20" text-anchor="middle" class="text">Fallback Cache</text>
+    </g>
+  </g>
+
+  <!-- Error Handling -->
+  <g transform="translate(250,300)">
+    <rect x="0" y="0" width="400" height="120" rx="5" class="box"/>
+    <text x="200" y="30" text-anchor="middle" class="title">Error Handling</text>
+    
+    <rect x="20" y="50" width="120" height="40" rx="5" class="box"/>
+    <text x="80" y="75" text-anchor="middle" class="text">Primary Error</text>
+    
+    <path d="M 140,70 L 180,70" class="flow-line error-path"/>
+    
+    <rect x="180" y="50" width="200" height="40" rx="5" class="box highlight"/>
+    <text x="280" y="75" text-anchor="middle" class="text">Fallback Provider Handling</text>
+  </g>
+
+  <!-- Cache Types -->
+  <g transform="translate(50,300)">
+    <rect x="0" y="0" width="120" height="160" rx="5" class="box"/>
+    <text x="60" y="30" text-anchor="middle" class="title">Cache Types</text>
+    
+    <text x="60" y="60" text-anchor="middle" class="text">Redis</text>
+    <text x="60" y="90" text-anchor="middle" class="text">MongoDB</text>
+    <text x="60" y="120" text-anchor="middle" class="text">Memory</text>
+    <text x="60" y="150" text-anchor="middle" class="text">No Cache</text>
+  </g>
+</svg>
