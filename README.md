@@ -13,7 +13,7 @@ A flexible TypeScript caching library that supports multiple storage providers (
 ## Installation
 
 ```bash
-npm install tbk-cache
+npm install cache-manager
 ```
 
 ## Usage
